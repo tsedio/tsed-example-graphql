@@ -13,16 +13,16 @@
     "test:coverage": "yarn test:unit"
   },
   "dependencies": {
-    "@tsed/ajv": "6.47.4",
-    "@tsed/common": "6.47.4",
-    "@tsed/core": "6.47.4",
-    "@tsed/di": "6.47.4",
-    "@tsed/exceptions": "6.47.4",
-    "@tsed/graphql": "6.47.4",
-    "@tsed/json-mapper": "6.47.4",
-    "@tsed/platform-express": "6.47.4",
-    "@tsed/schema": "6.47.4",
-    "ajv": "8.0.3",
+    "@tsed/ajv": "6.49.2",
+    "@tsed/common": "6.49.2",
+    "@tsed/core": "6.49.2",
+    "@tsed/di": "6.49.2",
+    "@tsed/exceptions": "6.49.2",
+    "@tsed/graphql": "6.49.2",
+    "@tsed/json-mapper": "6.49.2",
+    "@tsed/platform-express": "6.49.2",
+    "@tsed/schema": "6.49.2",
+    "ajv": "8.3.0",
     "apollo-datasource": "0.7.2",
     "apollo-datasource-rest": "0.9.5",
     "apollo-server-express": "2.19.0",
@@ -55,6 +55,6 @@
     "supertest": "6.0.1",
     "ts-jest": "26.4.3",
     "ts-node": "9.0.0",
-    "typescript": "4.2.3"
+    "typescript": "4.2.4"
   }
 }
