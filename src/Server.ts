@@ -2,14 +2,12 @@ import "@tsed/ajv";
 import {PlatformApplication} from "@tsed/common";
 import {Configuration, Inject} from "@tsed/di";
 import "@tsed/platform-express"; // /!\ keep this import
-import * as bodyParser from "body-parser";
-import * as compress from "compression";
-import * as cookieParser from "cookie-parser";
-import * as cors from "cors";
-import * as helmet from "helmet";
-import * as methodOverride from "method-override";
-import {MyDataSource} from "./graphql/datasources/MyDataSource";
-import {RecipeResolver} from "./graphql/recipes/RecipeResolver";
+import bodyParser from "body-parser";
+import compress from "compression";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import methodOverride from "method-override";
+import "./modules/graphql/GraphQLModule";
 
 export const rootDir = __dirname;
 
@@ -21,17 +19,7 @@ export const rootDir = __dirname;
   mount: {},
   exclude: [
     "**/*.spec.ts"
-  ],
-  imports: [
-    MyDataSource
-  ],
-  graphql: {
-    default: {
-      path: "/",
-      resolvers: [RecipeResolver],
-      buildSchemaOptions: {}
-    }
-  }
+  ]
 })
 export class Server {
   @Inject()
@@ -42,7 +30,6 @@ export class Server {
 
   $beforeRoutesInit(): void {
     this.app
-      .use(helmet())
       .use(cors())
       .use(cookieParser())
       .use(compress({}))
@@ -51,5 +38,9 @@ export class Server {
       .use(bodyParser.urlencoded({
         extended: true
       }));
+  }
+
+  $afterRoutesInit() {
+
   }
 }

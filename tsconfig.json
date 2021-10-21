@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "module": "commonjs",
-    "target": "es2016",
+    "target": "esnext",
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
@@ -17,11 +18,12 @@
     "importHelpers": true,
     "newLine": "LF",
     "noEmit": true,
+    "esModuleInterop": true,
     "resolveJsonModule": true,
     "lib": [
       "es7",
       "dom",
-      "esnext.asynciterable"
+      "ESNext.AsyncIterable"
     ],
     "typeRoots": [
       "./node_modules/@types"

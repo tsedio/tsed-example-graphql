@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "yarn tsc",
+    "build": "yarn run tsc",
     "tsc": "tsc --project tsconfig.compile.json",
     "tsc:w": "tsc --project tsconfig.json -w",
-    "start": "nodemon --watch \"src/**/*.ts\" --ignore \"node_modules/**/*\" --exec ts-node src/index.ts",
+    "start": "tsnd --inspect --ignore-watch node_modules --respawn --transpile-only -r tsconfig-paths/register src/index.ts",
     "start:prod": "cross-env NODE_ENV=production node dist/index.js",
     "test": "yarn test:lint && yarn test:coverage",
     "test:unit": "cross-env NODE_ENV=test jest",
@@ -18,7 +18,7 @@
     "@tsed/core": "6.75.4",
     "@tsed/di": "6.75.4",
     "@tsed/exceptions": "6.75.4",
-    "@tsed/graphql": "6.75.4",
+    "@tsed/typegraphql": "6.75.4",
     "@tsed/json-mapper": "6.75.4",
     "@tsed/platform-express": "6.75.4",
     "@tsed/schema": "6.75.4",
@@ -48,13 +48,14 @@
     "@types/method-override": "0.0.31",
     "@types/node": "14.14.34",
     "@types/supertest": "2.0.10",
-    "apollo-server-testing": "2.19.0",
-    "concurrently": "5.3.0",
+    "apollo-server-testing": "^2.25.2",
     "jest": "27.2.0",
     "nodemon": "2.0.6",
     "supertest": "6.0.1",
     "ts-jest": "27.0.5",
-    "ts-node": "10.2.1",
-    "typescript": "4.2.4"
+    "ts-node": "^10.3.1",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.11.0",
+    "typescript": "^4.4.4"
   }
 }
